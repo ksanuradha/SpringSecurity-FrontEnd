@@ -24,12 +24,8 @@ export class HeaderComponent implements OnInit {
   }
 
   toggleMenue() {
-    this.drawer.toggle();
-    //this.menueService.toogle();
-  }
-
-  toggleSidenav() {
-      this.rightDrawer.toggle();
+    //this.drawer.toggle();
+    this.menueService.toogle();
   }
 
   public isLoggedIn() {
