@@ -1,0 +1,35 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.mat-toolbar {
+  position: relative;
+  z-index: 2;
+}
+
+.space-left{
+  padding-left: 15px;
+}
+
+.account-circle {
+  cursor: pointer;
+  color: white;
+}
+
+.logout-circle{
+  cursor: pointer;
+  color: red;
+}
+
+.mat-sidenav-container{
+  height: 100vh;
+}
+
+.mat-sidenav{
+  width: 250px;
+}
+
+.mat-sidenav {
+  height: 100vh;
+  z-index: 1;
+}

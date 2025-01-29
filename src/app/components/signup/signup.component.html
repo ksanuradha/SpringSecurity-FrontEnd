@@ -1,0 +1,52 @@
+<div class="register-area">
+    <div class="row m-0">
+        <div class="left-side col-lg-6 col-md-6 p-0">
+            <div class="register-image">
+                <img width="625px" height="780px" src="../../../assets/berlin.jpg" alt="image">
+            </div>
+        </div>
+        <div class="right-side col-lg-6 col-md-6 p-0">
+            <div class="register-content">
+                <div class="register-form">
+                    <h3>Open up your Spring boot Academy Account now</h3>
+                    <p>Already signed up? <a routerLink="/login">Log in</a></p>
+                    <form #signupForm="ngForm" (ngSubmit)="register()">
+                        <div class="form-group">
+                            <input type="email" #email="ngModel" name="email" [(ngModel)]="signup.username" id="email" placeholder="Your Email Address" class="form-control" required email>
+                            <div *ngIf="email.invalid && email.touched" class="text-danger">
+                                <div *ngIf="email.errors?.['required']">Email is Required</div>
+                                <div *ngIf="email.errors?.['email']">Invalid Email Format</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" minlength="6" name="password"  #password="ngModel" [(ngModel)]="signup.userPassword" id="password" placeholder="Enter Your password" class="form-control" required>
+                            <div *ngIf="password.invalid && password.touched" class="text-danger">
+                                <div *ngIf="password.errors?.['required']">Password is Required</div>
+                                <div *ngIf="password.errors?.['minlength']">Password Must be at least 6 character long</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="firstname" #firstname="ngModel" [(ngModel)]="signup.userFirstName" id="firstname" placeholder="Enter Your First Name" class="form-control" required>
+                            <div *ngIf="firstname.invalid && firstname.touched" class="text-danger">
+                                <div *ngIf="firstname.errors?.['required']">First Name is Required</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="lastame" #lastame="ngModel" [(ngModel)]="signup.userLastName" id="lastame" placeholder="Enter Your Last Name" class="form-control" required>
+                            <div *ngIf="lastame.invalid && lastame.touched" class="text-danger">
+                                <div *ngIf="lastame.errors?.['required']">Last Name is Required</div>
+                            </div>
+                        </div>
+                        <button type="submit" [disabled]="signupForm.invalid" [ngClass]="{'btn-disabled':signupForm.invalid}">Sign Up</button>
+                        <div class="connect-with-social">
+                            <span>Or</span>
+                            <button type="submit" class="facebook"><i class="bx bxl-facebook"></i>Connect With Facebook</button>
+                            <button type="submit" class="twitter"><i class="bx bxl-twitter"></i>Connect With Twitter</button>
+                            <button type="submit" class="google"><i class="bx bxl-google"></i>Connect With Google</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
